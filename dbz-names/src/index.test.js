@@ -22,6 +22,15 @@ describe('dbz-names', function(){
     it('should return a random item from the dbz.all', function(){
       let randomItem = dbz.random();
       expect(dbz.all).to.include(randomItem);
+    });
+
+    it('should return an array of random items if passed', function(){
+      let randomItems = dbz.random(3);
+      expect(randomItems).to.have.length(3);
+      
+      randomItems.forEach(function(item) {
+        expect(dbz).to.include(item);
+      })
     })
   })
 });
