@@ -9,6 +9,8 @@ node_js:
   - '9'
   - '8'
   - '6'
+script:
+  - nm run test:single
 after_success:
   - npm run semantic-release
 branches:
